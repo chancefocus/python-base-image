@@ -1,0 +1,9 @@
+stages:
+    - deploy
+
+mirror:
+    stage: deploy
+    script:
+        - git push --tag "https://github.com/chancefocus/python-base-image.git" $CI_COMMIT_REF_NAME
+    only:
+        - tags
