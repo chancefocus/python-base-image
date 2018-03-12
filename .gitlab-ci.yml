@@ -9,5 +9,5 @@ mirror:
     script:
         - git push "git@github.com:chancefocus/python-base-image.git" $CI_COMMIT_REF_NAME
     only:
-        - branch
+        - branches
         - tags
