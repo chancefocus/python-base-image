@@ -11,6 +11,7 @@ stages:
 mirror:
     stage: deploy
     script:
+        - ssh -vT git@github.com
         - git checkout $CI_COMMIT_REF_NAME
         - git push "git@github.com:chancefocus/python-base-image.git" $CI_COMMIT_REF_NAME
     only:
