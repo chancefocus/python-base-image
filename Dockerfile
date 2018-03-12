@@ -25,5 +25,3 @@ RUN pip install -r requirements.txt
 
 VOLUME ["/code"]
 WORKDIR code
-
-ENTRYPOINT dumb-init
