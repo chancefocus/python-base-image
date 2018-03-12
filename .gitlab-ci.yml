@@ -2,6 +2,7 @@ before_script:
     - mkdir ~/.ssh
     - echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
     - ssh-keyscan -H -t rsa github.com >> ~/.ssh/known_hosts
+    - chmod 400 ~/.ssh/id_rsa
 
 stages:
     - deploy
