@@ -1,9 +1,13 @@
+before_script:
+    - echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
+
 stages:
     - deploy
 
 mirror:
     stage: deploy
     script:
-        - git push --tag "https://github.com/chancefocus/python-base-image.git" $CI_COMMIT_REF_NAME
+        - git push "git@github.com:chancefocus/python-base-image.git" $CI_COMMIT_REF_NAME
     only:
+        - branch
         - tags
