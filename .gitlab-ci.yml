@@ -1,4 +1,5 @@
 before_script:
+    - mkdir ~/.ssh
     - echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
 
 stages:
