@@ -8,6 +8,7 @@ stages:
 mirror:
     stage: deploy
     script:
+        - git status
         - git push "git@github.com:chancefocus/python-base-image.git" $CI_COMMIT_REF_NAME
     only:
         - branches
