@@ -3,6 +3,7 @@ before_script:
     - echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
     - echo $SSH_PUBLIC_KEY > ~/.ssh/id_rsa.pub
     - ssh-keyscan -H -t rsa github.com >> ~/.ssh/known_hosts
+    - mknod -m 666 /dev/tty c 5 0
     - chmod 400 ~/.ssh/id_rsa
 
 stages:
