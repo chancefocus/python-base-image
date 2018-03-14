@@ -10,6 +10,9 @@ ENV PACKAGES="\
     python-dev \
     openssh \
     py-mysqldb \
+    curl \
+    gcc \
+    g++ \
 "
 
 RUN apk update && \
@@ -18,6 +21,8 @@ RUN apk update && \
     rm -r /usr/lib/python*/ensurepip && \
     pip install --upgrade pip setuptools nose && \
     rm -r /root/.cache 
+
+RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 COPY requirements.txt ./
 
