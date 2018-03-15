@@ -1,4 +1,4 @@
-From alpine:3.5
+From frolvlad/alpine-glibc
 
 MAINTAINER Jimin Huang "huangjimin@whu.edu.cn"
 
