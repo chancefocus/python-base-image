@@ -13,6 +13,12 @@ ENV PACKAGES="\
     curl \
     gcc \
     g++ \
+    gfortran \
+    build-base \
+    wget \
+    freetype-dev \
+    libpng-dev \
+    openblas-dev \
 "
 
 RUN apk update && \
@@ -27,6 +33,7 @@ RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 COPY requirements.txt ./
 
 RUN pip install -r requirements.txt
+RUN pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.4.0-cp27-none-linux_x86_64.whl
 
 VOLUME ["/code"]
 WORKDIR code
