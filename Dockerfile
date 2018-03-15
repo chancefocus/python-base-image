@@ -19,6 +19,7 @@ ENV PACKAGES="\
     freetype-dev \
     libpng-dev \
     openblas-dev \
+    libc6-compat \
 "
 
 RUN apk update && \
